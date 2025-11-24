@@ -3,42 +3,34 @@ import sys
 from stable_baselines3 import PPO
 from stable_baselines3.common.monitor import Monitor
 
-# Ensure we can import environment
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from environment.custom_env import DroneScoutingEnv
 
-def train_hero_model():
-    # We will save this in a special folder
-    save_dir = "models/hero_ppo"
+def train_complex_hero():
+    save_dir = "models/hero_complex"
     os.makedirs(save_dir, exist_ok=True)
     
-    print("--- Starting HERO Training (Long Run) ---")
-    print("This will train for 500,000 timesteps. Please be patient!")
+    print("--- Starting HERO Training (12x12 Complex Map with Compass) ---")
+    print("Training for 400,000 steps. This may take ~20 mins.")
     
-    # 1. Setup Environment
-    env = Monitor(DroneScoutingEnv(seed=123)) # Fixed seed for reproducibility
+    env = Monitor(DroneScoutingEnv(seed=777)) 
     
-    # 2. Setup Model with "Run 2" settings (Best performer)
-    # Run 2 params were: lr=5e-4, n_steps=1024, ent_coef=0.0
     model = PPO(
         "MlpPolicy", 
         env, 
         verbose=1, 
-        seed=123,
-        learning_rate=5e-4,
-        n_steps=1024,
-        ent_coef=0.0,
+        seed=777,
+        learning_rate=3e-4, # Standard rate
+        n_steps=2048, 
+        ent_coef=0.01,
         clip_range=0.2,
-        gae_lambda=0.95,
     )
     
-    # 3. Train for much longer (30k -> 500k)
-    # This ensures it finds the sparse rewards (waypoints)
-    model.learn(total_timesteps=500000)
+    # 400k steps for the complex map
+    model.learn(total_timesteps=400000)
     
-    # 4. Save
-    model.save(os.path.join(save_dir, "ppo_hero"))
-    print("Hero Model Saved! You can now run the visualization.")
+    model.save(os.path.join(save_dir, "ppo_complex_hero"))
+    print("Complex Hero Model Saved!")
 
 if __name__ == "__main__":
-    train_hero_model()
+    train_complex_hero()
