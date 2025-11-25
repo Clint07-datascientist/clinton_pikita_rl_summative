@@ -16,7 +16,7 @@ The drone must navigate a **12x12 km grid** to:
 5.  **Return** to Base (Green square) for data upload.
 
 ## 🛠️ Project Structure
-
+```
 student_name_rl_summative/
 ├── environment/           # Custom Gymnasium Environment
 │   ├── custom_env.py      # Logic: Physics, Rewards, Compass Navigation
