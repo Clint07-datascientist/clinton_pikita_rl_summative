@@ -1,9 +1,11 @@
-# AgroInsightX: Autonomous Drone Scouting with Reinforcement Learning
+**# AgroInsightX: Autonomous Drone Scouting with Reinforcement Learning**
 ---
 
-## Project Overview
+**## Project Overview**
 
-AgroInsightX is a precision-agriculture Reinforcement Learning (RL) project designed to solve a real-world food security challenge in Africa. In this project the goal is to train an autonomous drone agent to scout crop fields, detect disease hotspots, and return to base safely while navigating complex environmental constraints. To train a reinforcement learning agent by comparing RL Methods, that is, Value-Based (Deep Q Networks) and Policy Methods (REINFORCE, PPO, A2C), to optimize for a simulated mission-based environment.
+---
+
+AgroInsightX is a precision-agriculture Reinforcement Learning (RL) project designed to solve a real-world food security challenge in Africa. In this project the goal is to train an autonomous drone agent to scout crop fields, detect disease hotspots, and return to base safely while navigating complex environmental constraints. To train a reinforcement learning agent by comparing RL Methods, that is, Value-Based (Deep Q Networks) and Policy Methods (REINFORCE, PPO, A2C), to optimize for a simulated mission-based environment. 
 ---
 
 ## The Goal
@@ -19,7 +21,7 @@ The drone must navigate a 12x12 km grid to:
 
 ## Project Structure
 
-`
+
 clinton_pikita_rl_summative/
 ├── environment/                  # Custom Gymnasium Environment
 │   ├── custom_env.py             # Logic: Physics, Rewards, Observations
@@ -37,7 +39,7 @@ clinton_pikita_rl_summative/
 ├── main.py                       # Main execution script (Visualization)
 ├── plot_results.py               # Graph generation script
 └── requirements.txt              # Dependencies
-`
+
 
 ---
 
