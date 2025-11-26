@@ -5,7 +5,7 @@
 ![Stable Baselines3](https://img.shields.io/badge/Stable%20Baselines3-2.3.0-orange)
 
 🎥 Video Demonstration
-Watch the Agent in Action: Click here to view the simulation on YouTube
+Watch the Agent in Action: ![Click here](https://www.youtube.com/watch?v=EzDlIC4VobM) to view the simulation on YouTube
 
 ## 🌍 Project Overview
 **AgroInsightX** is a mission-based Reinforcement Learning (RL) project designed to solve a real-world precision agriculture challenge. The goal is to train an autonomous drone agent to scout crop fields, detect disease hotspots, and return to base safely while navigating complex environmental constraints.
